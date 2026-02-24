@@ -1,0 +1,26 @@
+# DELETE http://localhost:3000/book/delete/701906
+# GET http://localhost:3000/book/list
+
+
+
+POST http://localhost:3000/book/create
+Content-Type: application/json
+
+{
+    "name": "世界的秘密",
+    "author": "大卫·菲尔德",
+    "cover": "test1",
+    "description": "这是一本关于世界秘密的书籍",
+}
+
+
+# GET http://localhost:3000/book/701906
+
+# Content-Type: application/json
+
+# {
+#     "name": "《世界的秘密》",
+#     "author": "大卫·菲尔德",
+#     "cover": "test1",
+#     "description": "这是一本关于世界秘密的书籍",
+# }
