@@ -15,6 +15,12 @@ const onFinish = async (values: LoginUser) => {
       message.success("登录成功");
       localStorage.setItem("username", values.username); // Save username
 
+      if (res.data && res.data.avatar) {
+        localStorage.setItem("avatar", res.data.avatar);
+      } else {
+        localStorage.removeItem("avatar"); // Clear old avatar if none
+      }
+
       setTimeout(() => {
         window.location.href = "/";
       }, 1000);
@@ -25,8 +31,8 @@ const onFinish = async (values: LoginUser) => {
 };
 
 const layout1 = {
-  labelCol: { span: 4 },
-  wrapperCol: { span: 20 },
+  labelCol: { span: 5 },
+  wrapperCol: { span: 19 },
 };
 
 const layout2 = {
