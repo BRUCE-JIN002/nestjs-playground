@@ -55,3 +55,10 @@ export async function update(book: UpdateBook) {
 export async function deleteBook(id: number) {
   return await axiosInstance.delete(`/book/delete/${id}`);
 }
+
+export async function updateUserAvatar(username: string, avatar: string) {
+  return await axiosInstance.post("/user/update/avatar", {
+    username,
+    avatar,
+  });
+}

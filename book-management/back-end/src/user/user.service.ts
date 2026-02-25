@@ -48,4 +48,17 @@ export class UserService {
 
     return foundUser;
   }
+
+  async updateAvatar(username: string, avatar: string) {
+    const users: User[] = await this.dbService.read();
+    const foundUser = users.find((item) => item.username === username);
+
+    if (!foundUser) {
+      throw new BadRequestException('用户不存在');
+    }
+
+    foundUser.avatar = avatar;
+    await this.dbService.write(users);
+    return foundUser;
+  }
 }

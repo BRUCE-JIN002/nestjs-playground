@@ -13,6 +13,7 @@ const onFinish = async (values: LoginUser) => {
 
     if (res.status === 201 || res.status === 200) {
       message.success("登录成功");
+      localStorage.setItem("username", values.username); // Save username
 
       setTimeout(() => {
         window.location.href = "/";
@@ -24,8 +25,8 @@ const onFinish = async (values: LoginUser) => {
 };
 
 const layout1 = {
-  labelCol: { span: 5 },
-  wrapperCol: { span: 19 },
+  labelCol: { span: 4 },
+  wrapperCol: { span: 20 },
 };
 
 const layout2 = {
